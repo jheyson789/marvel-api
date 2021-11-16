@@ -15,3 +15,8 @@
     </div>
   </div>
 </div>
+
+<app-pagination
+  [page]="count"
+  (filter)="findCharacters($event)"
+></app-pagination>

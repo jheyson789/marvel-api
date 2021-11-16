@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CharactersService } from './services/characters.service';
+import { ICharacters } from './interfaces/characters.interface';
 
 @Component({
   selector: 'app-characters',
@@ -8,7 +9,7 @@ import { CharactersService } from './services/characters.service';
 })
 export class CharactersComponent implements OnInit {
 
-  public characters = []
+  public characters:ICharacters[] = []
 
   constructor(private _charactersService:CharactersService) { }
 
@@ -17,7 +18,10 @@ export class CharactersComponent implements OnInit {
   }
 
   findCharacters(){
-    this._charactersService.getCharacters().subscribe(resp => console.log(resp), err => console.log(err))
+    this._charactersService.getCharacters().subscribe(resp => {
+      this.characters = resp.data.results
+      console.log(resp.data.results);
+    }, err => console.log(err))
   }
 
 }

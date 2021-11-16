@@ -2,13 +2,29 @@
   <div class="container">
     <div class="row justify-content-between align-content-center">
       <div class="col-6 col-md-4 d-flex">
-        <div class="icon-menu py-3 align-content-center" (click)="changeStatus()">
-          <fa-icon [icon]="faBars" [styles]="{color: '#fff'}" [size]="'2x'"></fa-icon>
+        <div
+          class="icon-menu py-3 align-content-center"
+          (click)="changeStatus()"
+        >
+          <fa-icon
+            [icon]="faBars"
+            [styles]="{ color: '#fff' }"
+            [size]="'2x'"
+          ></fa-icon>
         </div>
-        <img class="img-logo" src="/assets/img/marvel-comics.jpeg" alt="Logo Marvel Comics">
+        <img
+          class="img-logo"
+          src="/assets/img/marvel-comics.jpeg"
+          alt="Logo Marvel Comics"
+        />
       </div>
       <div class="col-6 col-md-4">
-        <img class="h-25 position-fixed img-spider" [style.top.px]="0" src="/assets/img/spider-man.png" alt="Spider Man">
+        <img
+          class="h-25 position-absolute img-spider"
+          [style.top.px]="0"
+          src="/assets/img/spider-man.png"
+          alt="Spider Man"
+        />
       </div>
     </div>
   </div>
@@ -16,7 +32,7 @@
     <nav class="row">
       <div class="side">
         <ul class="ul-list">
-          <li>Characters</li>
+          <li [routerLink]="['/characters']">Characters</li>
           <li>Comics</li>
           <li>Creators</li>
           <li>Events</li>

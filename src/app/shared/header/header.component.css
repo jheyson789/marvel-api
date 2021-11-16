@@ -22,8 +22,8 @@ header img.img-logo {
   margin: 0 10px;
 }
 
-.side .ul-list li{
-  display:inline-block;
+.side .ul-list li {
+  display: inline-block;
   margin: 5px;
   padding: 5px 30px;
   color: #fff;
@@ -34,7 +34,7 @@ header img.img-logo {
 .side .ul-list li:hover {
   cursor: pointer;
   background-color: #f78f3f;
-  transition: 0.40s all;
+  transition: 0.4s all;
 }
 
 /* .icon-menu {
@@ -44,7 +44,7 @@ header img.img-logo {
 @media screen and (max-width: 550px) {
   header img.img-logo {
     width: 65%;
-  } 
+  }
 }
 
 @media screen and (max-width: 720px) {
@@ -57,19 +57,17 @@ header img.img-logo {
 @media screen and (min-width: 720px) {
   header img.img-logo {
     width: 50%;
-  } 
-
+  }
 }
 
 @media screen and (min-width: 1024px) {
   header img.img-logo {
     width: 40%;
-  } 
+  }
 }
 
 @media screen and (min-width: 1366px) {
   header img.img-logo {
     width: 30%;
-  } 
+  }
 }
-

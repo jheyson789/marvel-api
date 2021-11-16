@@ -9,23 +9,21 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpReqInterceptor } from './shared/interceptors/http-req.interceptor';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     HomeModule,
-    FontAwesomeModule
+    FontAwesomeModule,
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpReqInterceptor,
-      multi: true
-    }
+      multi: true,
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

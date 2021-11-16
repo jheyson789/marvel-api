@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CharactersService } from './services/characters.service';
-import { ICharacters } from './interfaces/characters.interface';
+import { Character } from './interfaces/characters.interface';
 
 @Component({
   selector: 'app-characters',
@@ -8,7 +8,7 @@ import { ICharacters } from './interfaces/characters.interface';
   styleUrls: ['./characters.component.css'],
 })
 export class CharactersComponent implements OnInit {
-  public characters: ICharacters[] = [];
+  public characters: Character[] = [];
 
   constructor(private _charactersService: CharactersService) {}
 

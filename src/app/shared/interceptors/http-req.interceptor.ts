@@ -22,10 +22,11 @@ export class HttpReqInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     const url = this.urlBase + request.url;
-    const params = new HttpParams()
+    const params = request.params
       .set('ts', 1000)
       .set('apikey', this.key)
       .set('hash', this.hash);
+
     const req = request.clone({ url, params });
 
     return next.handle(req);

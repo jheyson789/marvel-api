@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CharactersService } from './services/characters.service';
-import { Character } from './interfaces/characters.interface';
+import { Character, filterCharacter } from './interfaces/characters.interface';
 
 @Component({
   selector: 'app-characters',
@@ -9,18 +9,23 @@ import { Character } from './interfaces/characters.interface';
 })
 export class CharactersComponent implements OnInit {
   public characters: Character[] = [];
+  public count: number = 0;
 
   constructor(private _charactersService: CharactersService) {}
 
   ngOnInit(): void {
-    this.findCharacters();
+    const filter: filterCharacter = {
+      limit: 21,
+      offset: 0,
+    };
+    this.findCharacters(filter);
   }
 
-  findCharacters() {
-    this._charactersService.getCharacters().subscribe(
+  findCharacters(filter: filterCharacter) {
+    this._charactersService.getCharacters(filter).subscribe(
       (resp) => {
         this.characters = resp.data.results;
-        console.log(resp.data.results);
+        this.count = Math.round(resp.data.offset / 21);
       },
       (err) => console.log(err)
     );

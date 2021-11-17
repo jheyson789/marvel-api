@@ -21,5 +21,6 @@ export class PaginationComponent implements OnInit {
       limit: 21,
     };
     this.filter.emit(filter);
+    window.scrollTo(0, 0);
   }
 }

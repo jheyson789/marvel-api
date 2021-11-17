@@ -1,0 +1,15 @@
+.features {
+  margin: 50px 0;
+  border-bottom: 1px solid #504a4a41;
+}
+
+a {
+  text-decoration: none;
+  color: #f38f3f;
+  transition: 0.3s all;
+}
+
+a:hover {
+  color: #e23636;
+  transition: 0.3s all;
+}

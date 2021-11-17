@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import {
   CharacterDataWrapper,
   filterCharacter,
-} from '../interfaces/characters.interface';
+} from '../../interfaces/characters.interface';
 
 @Injectable({
   providedIn: 'root',

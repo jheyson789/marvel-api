@@ -1,0 +1,25 @@
+<div class="row align-items-center">
+  <div class="col-md-5">
+    <img
+      [src]="character?.thumbnail?.path + '.' + character?.thumbnail?.extension"
+      [alt]="character?.name"
+      class="w-100"
+    />
+  </div>
+  <div class="col-md-7">
+    <h3>Description</h3>
+    <p class="description">
+      {{
+        character?.description?.length === 0
+          ? 'No Description'
+          : character?.description
+      }}
+    </p>
+  </div>
+</div>
+
+<app-features
+  *ngFor="let feat of features; let i = index"
+  [title]="keys[i]"
+  [feature]="feat"
+></app-features>

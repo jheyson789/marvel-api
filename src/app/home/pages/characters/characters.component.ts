@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CharactersService } from './services/characters.service';
-import { Character, filterCharacter } from './interfaces/characters.interface';
-
+import { Character, filterCharacter } from '../interfaces/characters.interface';
+import { tap } from 'rxjs/operators';
 @Component({
   selector: 'app-characters',
   templateUrl: './characters.component.html',
@@ -10,6 +10,7 @@ import { Character, filterCharacter } from './interfaces/characters.interface';
 export class CharactersComponent implements OnInit {
   public characters: Character[] = [];
   public count: number = 0;
+  public viewSpinner = false;
 
   constructor(private _charactersService: CharactersService) {}
 
@@ -22,12 +23,22 @@ export class CharactersComponent implements OnInit {
   }
 
   findCharacters(filter: filterCharacter) {
-    this._charactersService.getCharacters(filter).subscribe(
-      (resp) => {
-        this.characters = resp.data.results;
-        this.count = Math.round(resp.data.offset / 21);
-      },
-      (err) => console.log(err)
-    );
+    this.viewSpinner = true;
+    this.characters = [];
+    this._charactersService
+      .getCharacters(filter)
+      .pipe(
+        tap(
+          () => (this.viewSpinner = false),
+          () => (this.viewSpinner = false)
+        )
+      )
+      .subscribe(
+        (resp) => {
+          this.characters = resp.data.results;
+          this.count = Math.round(resp.data.offset / 21);
+        },
+        (err) => console.log(err)
+      );
   }
 }

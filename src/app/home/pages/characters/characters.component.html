@@ -1,4 +1,5 @@
 <div class="row" data-masonry-options='{"percentPosition": true }'>
+  <app-spinner [view]="viewSpinner"></app-spinner>
   <div class="col-md-4 py-4 my-2" *ngFor="let character of characters">
     <div class="card text-white">
       <img
@@ -11,6 +12,15 @@
         <h5 class="card-title">{{ character.name }}</h5>
         <p class="card-text">{{ character.description }}</p>
         <p class="card-text">Last updated {{ character.modified | date }}</p>
+        <div class="card-footer">
+          <input
+            type="button"
+            value="More Info"
+            class="btn"
+            [routerLink]="['/character', character.id]"
+            routerLinkActive="router-link-active"
+          />
+        </div>
       </div>
     </div>
   </div>

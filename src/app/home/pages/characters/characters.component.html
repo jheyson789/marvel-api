@@ -12,6 +12,15 @@
         <h5 class="card-title">{{ character.name }}</h5>
         <p class="card-text">{{ character.description }}</p>
         <p class="card-text">Last updated {{ character.modified | date }}</p>
+        <div class="card-footer">
+          <input
+            type="button"
+            value="More Info"
+            class="btn"
+            [routerLink]="['/character', character.id]"
+            routerLinkActive="router-link-active"
+          />
+        </div>
       </div>
     </div>
   </div>

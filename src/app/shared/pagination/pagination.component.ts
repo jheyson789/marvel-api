@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { filterCharacter } from 'src/app/home/pages/characters/interfaces/characters.interface';
+import { filterCharacter } from '../../home/pages/interfaces/characters.interface';
 
 @Component({
   selector: 'app-pagination',

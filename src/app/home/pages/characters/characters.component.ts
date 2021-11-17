@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CharactersService } from './services/characters.service';
-import { Character, filterCharacter } from './interfaces/characters.interface';
+import { Character, filterCharacter } from '../interfaces/characters.interface';
 import { tap } from 'rxjs/operators';
 @Component({
   selector: 'app-characters',

@@ -17,3 +17,9 @@
     </p>
   </div>
 </div>
+
+<app-features
+  *ngFor="let feat of features; let i = index"
+  [title]="keys[i]"
+  [feature]="feat"
+></app-features>

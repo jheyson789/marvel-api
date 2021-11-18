@@ -1,1 +1,19 @@
-<p>cards works!</p>
+<div class="row">
+  <div class="col-md-4" *ngFor="let item of dataMarvelCards">
+    <div class="card">
+      <img
+        [src]="item.image.path"
+        class="card-img-top"
+        [alt]="item.image.description"
+        [routerLink]="item.route"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ item.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ item.subtitle }}</h6>
+        <p class="card-text">
+          {{ item.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

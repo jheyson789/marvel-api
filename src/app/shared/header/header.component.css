@@ -90,3 +90,9 @@ header img.img-logo {
     height: 23%;
   }
 }
+
+@media screen and (min-width: 1440px) {
+  .header img.img-spider {
+    height: 19%;
+  }
+}

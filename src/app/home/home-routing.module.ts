@@ -9,8 +9,14 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     children: [
+      {
+        path: 'home',
+        loadChildren: () =>
+          import('./landing/main/main.module').then((m) => m.MainModule),
+      },
       { path: 'characters', component: CharactersComponent },
       { path: 'character/:id', component: CharacterComponent },
+      { path: '**', redirectTo: 'home', pathMatch: 'full' },
     ],
   },
 ];

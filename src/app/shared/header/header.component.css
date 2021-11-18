@@ -32,10 +32,15 @@ header img.img-logo {
   transition: 0.35s all;
 }
 
-.side .ul-list li:hover {
+.side .ul-list li:hover:not(.actived-li) {
   cursor: pointer;
   background-color: #f78f3f;
   transition: 0.4s all;
+}
+
+.actived-li {
+  border-radius: 0px !important;
+  border-bottom: 4px solid #f78f3f;
 }
 
 /* .icon-menu {

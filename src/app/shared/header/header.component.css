@@ -9,6 +9,7 @@
 
 header img.img-logo {
   width: 80%;
+  transition: 0.3s all;
 }
 
 .sidebar {
@@ -47,22 +48,26 @@ header img.img-logo {
   display: none;
 } */
 
+.header img.img-spider {
+  height: 18%;
+  transition: 0.3s all;
+}
+
 @media screen and (max-width: 550px) {
   header img.img-logo {
     width: 65%;
   }
-}
-
-@media screen and (max-width: 720px) {
-  /* .icon-menu {
-    display: flex;
-    transition: all 0.2s;
-  } */
+  .header img.img-spider {
+    height: 23%;
+  }
 }
 
 @media screen and (min-width: 720px) {
   header img.img-logo {
     width: 50%;
+  }
+  .header img.img-spider {
+    height: 28%;
   }
 }
 
@@ -70,10 +75,18 @@ header img.img-logo {
   header img.img-logo {
     width: 40%;
   }
+
+  .header img.img-spider {
+    height: 25%;
+  }
 }
 
 @media screen and (min-width: 1366px) {
   header img.img-logo {
     width: 30%;
+  }
+
+  .header img.img-spider {
+    height: 23%;
   }
 }

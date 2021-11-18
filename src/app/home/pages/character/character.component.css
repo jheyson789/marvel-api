@@ -1,0 +1,8 @@
+.name-character::after {
+  content: '';
+  display: block;
+  left: 0;
+  width: 55%;
+  margin-top: 5px;
+  border-bottom: 2px solid #000;
+}

@@ -1,6 +1,9 @@
 .main {
   margin: 80px 0px;
 }
+section.section {
+  margin: 80px 0;
+}
 
 .img-comic {
   display: flex;

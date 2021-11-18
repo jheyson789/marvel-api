@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { PaginationComponent } from './pagination/pagination.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { FeaturesComponent } from './features/features.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { FeaturesComponent } from './features/features.component';
     PaginationComponent,
     SpinnerComponent,
     FeaturesComponent,
+    FooterComponent,
   ],
   imports: [CommonModule, FontAwesomeModule, RouterModule],
   exports: [
@@ -20,6 +22,7 @@ import { FeaturesComponent } from './features/features.component';
     PaginationComponent,
     SpinnerComponent,
     FeaturesComponent,
+    FooterComponent,
   ],
 })
 export class SharedModule {}

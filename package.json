@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href=/marvel-api/",
+    "build": "ng build",
+    "deploy": "ng build --base-href=/marvel-api/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "p:fix": "prettier --config ./.prettierrc --write \"src/{app,enviroments}/**/*{.ts,.css,.html}\"",

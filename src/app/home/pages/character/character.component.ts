@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CharacterService } from './services/character.service';
 import { Character } from '../interfaces/characters.interface';
 import { IFeature } from '../../../shared/features/features.component';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-character',
@@ -26,6 +27,8 @@ export class CharacterComponent implements OnInit {
   public keys = ['comics', 'events', 'stories', 'series'];
   public features: IFeature[][] = [];
 
+  public viewSpinner = false;
+
   constructor(
     private _route: ActivatedRoute,
     private _characterService: CharacterService
@@ -38,13 +41,22 @@ export class CharacterComponent implements OnInit {
   }
 
   findCharacter(id: number) {
-    this._characterService.getCharacter(id).subscribe(
-      (resp) => {
-        this.character = resp.data.results[0];
-        this.dataFeature(this.character);
-      },
-      (err) => console.log(err)
-    );
+    this.viewSpinner = true;
+    this._characterService
+      .getCharacter(id)
+      .pipe(
+        tap(
+          () => (this.viewSpinner = false),
+          () => (this.viewSpinner = false)
+        )
+      )
+      .subscribe(
+        (resp) => {
+          this.character = resp.data.results[0];
+          this.dataFeature(this.character);
+        },
+        (err) => console.log(err)
+      );
   }
 
   dataFeature(character: any) {

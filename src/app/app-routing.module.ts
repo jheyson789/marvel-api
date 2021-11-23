@@ -5,7 +5,7 @@ import { HomeRoutingModule } from './home/home-routing.module';
 const routes: Routes = [];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), HomeRoutingModule],
+  imports: [RouterModule.forRoot(routes, { useHash: true }), HomeRoutingModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
